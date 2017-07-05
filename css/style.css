@@ -466,7 +466,6 @@ body {
   width: auto;
   color: white;
   text-decoration: none;
-  font-size: 14px;
   text-transform: capitalize;
   transition: color 0.3s;
   display: inline-block;
@@ -496,7 +495,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 0 auto; }
+  margin: 0; }
 
 .about {
   background: #37474f; }
@@ -527,6 +526,7 @@ body {
   background-size: cover; }
 
 .team__content {
+  padding: 50px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -535,7 +535,8 @@ body {
 .team__title {
   font-size: 34px;
   color: white;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  margin: 0; }
 
 .team__list {
   padding: 0;
@@ -543,7 +544,8 @@ body {
   align-items: center;
   justify-content: center;
   display: flex;
-  flex-wrap: wrap; }
+  flex-wrap: wrap;
+  margin: 30px 0 0 0; }
 
 .team__person {
   margin: 0 30px;
