@@ -1,0 +1,18 @@
+@mixin border-bottom($size, $type, $color) {
+  -webkit-border-bottom: $size $type $color;
+     -moz-border-bottom: $size $type $color;
+      -ms-border-bottom: $size $type $color;
+          border-bottom: $size $type $color;
+}
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+@mixin border($size, $type, $color) {
+  -webkit-border: $size $type $color;
+     -moz-border: $size $type $color;
+      -ms-border: $size $type $color;
+          border: $size $type $color;
+}

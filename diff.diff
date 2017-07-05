@@ -1,0 +1,45 @@
+diff --git a/package.json b/package.json
+index 0f96e15..1ad4f60 100644
+--- a/package.json
++++ b/package.json
+@@ -4,11 +4,25 @@
+   "description": "Smiley website.",
+   "main": "index.js",
+   "scripts": {
+-    "test": "echo \"Error: no test specified\" && exit 1"
++    "build-task:scss-compile": "node-sass --importer=node_modules/node-sass-tilde-importer --include-path scss --include-path node_modules --source-map true scss -o css",
++    "build-task:autoprefixer": "postcss css/*.css --use autoprefixer -d css",
++    "build-task:cssnano": "postcss css/*.css --use cssnano -d css",
++    "sass:build": "npm-run-all build-task:*",
++    "sass:watch": "chokidar 'scss/**/*.scss' -c 'npm run sass:build'",
++    "dev": "npm-run-all -p sass:*"
+   },
+   "author": "matonny",
+   "license": "ISC",
+   "dependencies": {
+     "normalize-scss": "^7.0.0"
++  },
++  "devDependencies": {
++    "autoprefixer": "^7.1.1",
++    "chokidar-cli": "^1.2.0",
++    "cssnano": "^3.10.0",
++    "node-sass": "^4.5.3",
++    "node-sass-tilde-importer": "^1.0.0",
++    "npm-run-all": "^4.0.2",
++    "postcss-cli": "^4.1.0"
+   }
+ }
+diff --git a/scss/style.scss b/scss/style.scss
+index 31ca0ad..e11e311 100644
+--- a/scss/style.scss
++++ b/scss/style.scss
+@@ -1,7 +1,8 @@
+-@import '../node_modules/normalize-scss/sass/normalize';
++@import '~normalize-scss/sass/normalize';
+ @import '_variables';
+ @import '_mixins';
+ @include normalize();
++
+ body{
+ 	font-family: $basefont;
+ }
