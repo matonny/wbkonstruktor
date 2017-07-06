@@ -406,7 +406,8 @@ body {
   font-family: "Roboto", sans-serif; }
 
 .header {
-  background-color: #37474f;
+  position: fixed;
+  background-color: rgba(55, 71, 79, 0.7);
   min-height: 60px;
   width: 100%;
   display: flex;
@@ -475,6 +476,7 @@ body {
   background-size: cover; }
 
 .home__content {
+  padding: 50px;
   display: flex;
   flex-direction: column; }
 
@@ -652,6 +654,83 @@ body {
   max-width: 400px;
   width: 100%; }
 
+.contact {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../images/contact-background.jpg");
+  background-size: cover; }
+
+.contact__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; }
+
+.contact__title {
+  color: white;
+  font-size: 34px;
+  margin: 0;
+  text-transform: uppercase; }
+
+.contact__info {
+  display: flex;
+  margin: 0 50px 50px 50px;
+  flex-wrap: wrap;
+  max-width: 850px;
+  width: 100%;
+  justify-content: space-around; }
+
+.contact__list {
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  align-items: space-between;
+  margin: 50px 0 0 0;
+  padding: 0; }
+
+.contact__item {
+  display: flex;
+  align-items: center;
+  height: 69px;
+  color: white;
+  font-size: 17px;
+  margin: 5px 0 5px 69px;
+  position: relative; }
+  .contact__item:before {
+    position: absolute;
+    content: '';
+    width: 69px;
+    height: 69px;
+    left: -80px; }
+
+.phone::before {
+  background-image: url("../images/phone-icon.png"); }
+
+.email::before {
+  background-image: url("../images/email-icon.png"); }
+
+.nip::before {
+  background-image: url("../images/nip-icon.png"); }
+
+.address::before {
+  background-image: url("../images/address-icon.png"); }
+
+.contact__map {
+  max-width: 400px;
+  width: 100%;
+  height: 300px;
+  margin-top: 50px; }
+
+.footer {
+  background-color: #37474f; }
+
+.footer__text {
+  font-size: 20px;
+  text-transform: uppercase;
+  color: white;
+  text-align: center;
+  margin: 0;
+  padding: 20px; }
+
 @media screen and (min-width: 768px) {
   .header {
     display: flex;
@@ -713,6 +792,9 @@ body {
     flex-wrap: wrap; }
 
   .clients__item {
-    margin: 20px 50px; } }
+    margin: 20px 50px; }
+
+  .contact__item {
+    font-size: 26px; } }
 
 /*# sourceMappingURL=style.css.map */
