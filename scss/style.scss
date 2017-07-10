@@ -1,14 +1,16 @@
 @import '../node_modules/normalize-scss/sass/normalize';
-@include normalize();
 @import '_variables';
 @import '_mixins';
-body {
-    font-family: $base-font;
+$normalize-vertical-rhythm: true;
+$base-font-family: $base-font;
+@include normalize();
+html{
+    line-height: 1.4;
 }
 
 .header {
     position: fixed;
-    background-color: rgba($primary-color, 0.7);
+    background-color: rgba($primary-color, 0.9);
     min-height: 60px;
     width: 100%;
     display: flex;
@@ -45,7 +47,7 @@ body {
 }
 
 .header__open-menu[aria-expanded="true"] + .header__nav {
-    height: 230px;
+    height: 270px;
 }
 
 .header__open-menu[aria-expanded="false"] + .header__nav {
@@ -90,7 +92,7 @@ body {
 }
 
 .home__content {
-    padding:50px;
+    padding:100px 0;
     display: flex;
     flex-direction: column;
 }
@@ -117,7 +119,7 @@ body {
 }
 
 .about__content {
-    padding: 50px 0;
+    padding: 100px 0;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -136,18 +138,18 @@ body {
 
 .about__description {
     font-size: 23px;
-    line-height: 33px;
     color: white;
-    margin: 10px;
+    margin: 30px 10px 0 10px;
 }
 
 .team {
     background: linear-gradient(rgba(black, 0.8), rgba(black, 0.8)), url("../images/team-background.jpg");
     background-size: cover;
+    background-position: 50% 0;
 }
 
 .team__content {
-    padding: 50px;
+    padding: 100px 0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -192,7 +194,7 @@ body {
 }
 
 .rewards__content {
-    padding: 50px;
+    padding: 100px 0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -269,7 +271,7 @@ body {
     background-color:$primary-color;
 }
 .gallery__content{
-    padding:30px;
+    padding:100px 0;
 }
 .gallery__title{
     color:white;
@@ -285,6 +287,7 @@ body {
     justify-content: center;
     list-style-type:none;
     padding:0;
+    margin: 30px 0 0 0;
 }
 .gallery__item{
     margin:15px;
@@ -292,12 +295,14 @@ body {
 .gallery__photo{
     max-width: 400px;
     width:100%;
+    max-height: 260px;
 }
 .contact{
     background: linear-gradient(rgba(black, 0.7), rgba(black, 0.7)), url("../images/contact-background.jpg");
     background-size:cover;
 }
 .contact__content{
+    padding:100px 0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -426,12 +431,10 @@ body {
     .home__title {
         font-size: 45px;
     }
-    .clients {
-        background-position: 10px 50%;
-    }
     .clients__list {
         flex-direction: row;
         flex-wrap: wrap;
+        margin-left:-30px;
     }
     .clients__item {
         margin: 20px 50px;

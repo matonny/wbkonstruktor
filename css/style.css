@@ -7,7 +7,10 @@
  *    IE on Windows Phone and in iOS.
  */
 html {
-  line-height: 1.15;
+  /* Change the default font family in all browsers (opinionated). */
+  font-family: "Roboto", sans-serif;
+  font-size: 100%;
+  line-height: 1.5em;
   /* 1 */
   -ms-text-size-adjust: 100%;
   /* 2 */
@@ -39,10 +42,64 @@ section {
  */
 h1 {
   font-size: 2em;
-  margin: 0.67em 0; }
+  line-height: 1.5em;
+  /* Set 1 unit of vertical rhythm on the top and bottom margins. */
+  margin: 0.75em 0; }
+
+h2 {
+  font-size: 1.5em;
+  line-height: 2em;
+  margin: 1em 0; }
+
+h3 {
+  font-size: 1.17em;
+  line-height: 1.28205em;
+  margin: 1.28205em 0; }
+
+h4 {
+  font-size: 1em;
+  line-height: 1.5em;
+  margin: 1.5em 0; }
+
+h5 {
+  font-size: 0.83em;
+  line-height: 1.80723em;
+  margin: 1.80723em 0; }
+
+h6 {
+  font-size: 0.67em;
+  line-height: 2.23881em;
+  margin: 2.23881em 0; }
 
 /* Grouping content
    ========================================================================== */
+/**
+ * Set 1 unit of vertical rhythm on the top and bottom margin.
+ */
+blockquote {
+  margin: 1.5em 40px; }
+
+dl,
+ol,
+ul {
+  margin: 1.5em 0; }
+
+/**
+ * Turn off margins on nested lists.
+ */
+ol ol,
+ol ul,
+ul ol,
+ul ul {
+  margin: 0; }
+
+dd {
+  margin: 0 0 0 40px; }
+
+ol,
+ul {
+  padding: 0 0 0 40px; }
+
 /**
  * Add the correct display in IE 9-.
  */
@@ -54,7 +111,7 @@ figure {
  * Add the correct margin in IE 8.
  */
 figure {
-  margin: 1em 40px; }
+  margin: 1.5em 40px; }
 
 /**
  * 1. Add the correct box sizing in Firefox.
@@ -73,6 +130,13 @@ hr {
  */
 main {
   display: block; }
+
+/**
+ * Set 1 unit of vertical rhythm on the top and bottom margin.
+ */
+p,
+pre {
+  margin: 1.5em 0; }
 
 /**
  * 1. Correct the inheritance and scaling of font size in all browsers.
@@ -211,11 +275,11 @@ input,
 optgroup,
 select,
 textarea {
-  font-family: sans-serif;
+  font-family: "Roboto", sans-serif;
   /* 1 */
   font-size: 100%;
   /* 1 */
-  line-height: 1.15;
+  line-height: 1.5em;
   /* 1 */
   margin: 0;
   /* 2 */ }
@@ -378,7 +442,20 @@ summary {
  * Add the correct display in IE 9-.
  */
 menu {
-  display: block; }
+  display: block;
+  /*
+   * 1. Set 1 unit of vertical rhythm on the top and bottom margin.
+   * 2. Set consistent space for the list style image.
+   */
+  margin: 1.5em 0;
+  /* 1 */
+  padding: 0 0 0 40px;
+  /* 2 */
+  /**
+   * Turn off margins on nested lists.
+   */ }
+  menu menu, ol menu, ul menu {
+    margin: 0; }
 
 /* Scripting
    ========================================================================== */
@@ -402,12 +479,12 @@ template {
 [hidden] {
   display: none; }
 
-body {
-  font-family: "Roboto", sans-serif; }
+html {
+  line-height: 1.4; }
 
 .header {
   position: fixed;
-  background-color: rgba(55, 71, 79, 0.7);
+  background-color: rgba(55, 71, 79, 0.9);
   min-height: 60px;
   width: 100%;
   display: flex;
@@ -439,7 +516,7 @@ body {
   align-self: flex-start; }
 
 .header__open-menu[aria-expanded="true"] + .header__nav {
-  height: 230px; }
+  height: 270px; }
 
 .header__open-menu[aria-expanded="false"] + .header__nav {
   height: 0;
@@ -476,7 +553,7 @@ body {
   background-size: cover; }
 
 .home__content {
-  padding: 50px;
+  padding: 100px 0;
   display: flex;
   flex-direction: column; }
 
@@ -499,7 +576,7 @@ body {
   background: #37474f; }
 
 .about__content {
-  padding: 50px 0;
+  padding: 100px 0;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -516,16 +593,16 @@ body {
 
 .about__description {
   font-size: 23px;
-  line-height: 33px;
   color: white;
-  margin: 10px; }
+  margin: 30px 10px 0 10px; }
 
 .team {
   background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("../images/team-background.jpg");
-  background-size: cover; }
+  background-size: cover;
+  background-position: 50% 0; }
 
 .team__content {
-  padding: 50px;
+  padding: 100px 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -563,7 +640,7 @@ body {
   background-color: #37474f; }
 
 .rewards__content {
-  padding: 50px;
+  padding: 100px 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -630,7 +707,7 @@ body {
   background-color: #37474f; }
 
 .gallery__content {
-  padding: 30px; }
+  padding: 100px 0; }
 
 .gallery__title {
   color: white;
@@ -645,20 +722,23 @@ body {
   align-items: center;
   justify-content: center;
   list-style-type: none;
-  padding: 0; }
+  padding: 0;
+  margin: 30px 0 0 0; }
 
 .gallery__item {
   margin: 15px; }
 
 .gallery__photo {
   max-width: 400px;
-  width: 100%; }
+  width: 100%;
+  max-height: 260px; }
 
 .contact {
   background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../images/contact-background.jpg");
   background-size: cover; }
 
 .contact__content {
+  padding: 100px 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -784,12 +864,10 @@ body {
   .home__title {
     font-size: 45px; }
 
-  .clients {
-    background-position: 10px 50%; }
-
   .clients__list {
     flex-direction: row;
-    flex-wrap: wrap; }
+    flex-wrap: wrap;
+    margin-left: -30px; }
 
   .clients__item {
     margin: 20px 50px; }
